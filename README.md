@@ -8,7 +8,7 @@ et de mes expériences professionnelles.
 ---
 
 ## 🎨 **Aperçu du Projet**
-🔗 **Lien vers le portfolio** : [https://portfolio-ruddy-eight-59.vercel.app/ ]
+🔗 **Lien vers le portfolio** : [cv-react-3tpw2uy0f-dorotheebms-projects.vercel.app]
 📸 **Technologies utilisées** : React, CSS, TailwindCSS, React Router  
 
 ![image du projet](image.png)
