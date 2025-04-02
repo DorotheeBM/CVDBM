@@ -1,27 +1,66 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../index.css";
+import { LangContext } from "../App";
 
-const Experiences = () => (
-  <section className="p-8">
-    <h2 className="Experiences">Mes expériences professionnelles</h2>
-    <ul className="list-disc pl-5">
-       <b><a href="https://rights.mediawan.com/" className="text-blue-600 font-bold hover:underline" target="_blank" rel="noopener noreferrer">Cheffe de projets - MEDIAWAN</a></b>
-      <ul><li>Coordination des équipes techniques et marketing pour le développement du site B2B
-      </li>
-      <li>Déploiement de stratégies d'automatisation des processus</li>
-      <li>Interface entre clients, équipes de production et direction pour garantir l’alignement des objectifs</li></ul>
-    <br/>
-    <b><a href="https://www.e2f.com/" className="text-blue-600 font-bold hover:underline" target="_blank" rel="noopener noreferrer">Directrice Qualité - E2F TRANSLATIONS INC.</a></b>
-      <ul><li>Mise en place de processus qualité et amélioration des workflows</li>
-      <li>Accompagnement des équipes dans l’adoption d’outils technologiques innovants</li>
-      <li>Formation et encadrement des équipes sur des outils de traduction automatique</li>
-      </ul><br/>
-      <b><a href="https://www.apple.com/" className="text-blue-600 font-bold hover:underline" target="_blank" rel="noopener noreferrer">QA Tester - APPLE INC.</a></b>
-      <ul><li>Tests linguistiques pour des produits Apple (notamment iCloud)</li>
-      <li>Formation et gestion d’équipes internationales (35 personnes)
-      </li></ul>
-    </ul>
-  </section>
-);
+const Experiences = () => {
+  const { translations } = useContext(LangContext);
+
+  return (
+    <section className="p-8">
+      <h2 className="Experiences">{translations.my_experiences}</h2>
+      <ul className="list-disc pl-5">
+        
+        {/* MEDIAWAN */}
+        <b>
+          <a href="https://rights.mediawan.com/" 
+             className="text-blue-600 font-bold hover:underline" 
+             target="_blank" 
+             rel="noopener noreferrer">
+            {translations.project_manager} - {translations.mediawan}
+          </a>
+        </b>
+        <ul>
+          <li>{translations.mediawan_desc1}</li>
+          <li>{translations.mediawan_desc2}</li>
+          <li>{translations.mediawan_desc3}</li>
+        </ul>
+
+        <br />
+
+        {/* E2F TRANSLATIONS INC. */}
+        <b>
+          <a href="https://www.e2f.com/" 
+             className="text-blue-600 font-bold hover:underline" 
+             target="_blank" 
+             rel="noopener noreferrer">
+            {translations.quality_director} - {translations.e2f}
+          </a>
+        </b>
+        <ul>
+          <li>{translations.e2f_desc1}</li>
+          <li>{translations.e2f_desc2}</li>
+          <li>{translations.e2f_desc3}</li>
+        </ul>
+
+        <br />
+
+        {/* APPLE INC. */}
+        <b>
+          <a href="https://www.apple.com/" 
+             className="text-blue-600 font-bold hover:underline" 
+             target="_blank" 
+             rel="noopener noreferrer">
+            {translations.qa_tester} - {translations.apple}
+          </a>
+        </b>
+        <ul>
+          <li>{translations.apple_desc1}</li>
+          <li>{translations.apple_desc2}</li>
+        </ul>
+
+      </ul>
+    </section>
+  );
+};
 
 export default Experiences;

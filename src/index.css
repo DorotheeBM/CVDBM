@@ -28,8 +28,6 @@
   display: flex;
   align-items: center;
   gap: 1rem; /* Espacement entre la photo et le nom */
-  text-align: left;
-  align-items: baseline;
 }
 
 .header-photo {
@@ -41,7 +39,25 @@
   height: 70px; /* Assurez-vous que la hauteur est proportionnelle */
   object-fit: cover; /* Assure que l'image couvre bien l'espace */
   margin-bottom: 3rem;
- 
+}
+
+.flag-container {
+  display: flex;
+  gap: 0.5rem; /* Espacement entre les drapeaux */
+  margin-left: 1rem;
+}
+
+.flag-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.flag-icon {
+  width: 40px; /* Même largeur que la photo */
+  height: 40px; /* Même hauteur que la photo */
+  object-fit: cover; /* Assure que l'image couvre bien l'espace */
+  border-radius: 20%; /* Même bordure arrondie que la photo */
 }
 
 .header-name {
@@ -126,6 +142,12 @@ button:focus-visible {
   color: #64c4ff;
   border-color: #ffffff; /* Change la couleur de la bordure au survol */
   background-color: #25425e; /* Change la couleur de fond au survol */
+}
+
+.language-buttons {
+  display: flex;
+  gap: 0.5rem; /* Espacement entre les boutons de langue */
+  margin-left: auto; /* Pousse les boutons à droite dans le conteneur flex */
 }
 
 .bio {
@@ -254,4 +276,34 @@ button:focus-visible {
 
 .tech h3{
   color: #64b1ff;
+}
+
+.competencesTechniques-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.competencesTechniques-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff; /* Bleu */
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.competencesTechniques-subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007bff; /* Bleu */
+  margin-bottom: 16px;
+}
+
+.competencesTechniques-list {
+  list-style-type: disc;
+  padding-left: 24px;
+  color: #4a4a4a; /* Gris foncé */
 }
