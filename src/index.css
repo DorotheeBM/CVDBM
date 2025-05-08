@@ -166,6 +166,30 @@ button:focus-visible {
   }
 }
 
+/* Hamburger caché par défaut */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Menu navigation caché en mobile */
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}
+
 .nav-links {
   display: flex;
   flex-wrap: wrap;

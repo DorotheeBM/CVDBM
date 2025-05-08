@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Photo from "./assets/photodetouree.png";
 import FR from "./assets/FR.png";
@@ -8,7 +8,8 @@ import { LangContext } from "../App";
 
 function Header() {
   const { lang, setLang, translations } = useContext(LangContext);
-
+  const [menuOpen, setMenuOpen] = unseState(false);
+  
   return (
     <header className="header-container">
       <div className="header-top">
@@ -26,7 +27,13 @@ function Header() {
         </div>
       </div>
 
-      <nav className="nav-links">
+      {/* Bouton hamburger */}
+      <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </button>
+
+      {/* Navigation principale */}
+      <nav className={`nav-links ${menuOpen ? "show" : ""}`}>
         <Link to="/" className="nav-link">{translations.home}</Link>
         <Link to="/experiences" className="nav-link">{translations.experience}</Link>
         <Link to="/projets" className="nav-link">{translations.projects}</Link>
