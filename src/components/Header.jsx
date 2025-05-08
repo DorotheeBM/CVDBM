@@ -8,7 +8,7 @@ import { LangContext } from "../App";
 
 function Header() {
   const { lang, setLang, translations } = useContext(LangContext);
-  const [menuOpen, setMenuOpen] = unseState(false);
+  // const [menuOpen, setMenuOpen] = unseState(false);
   
   return (
     <header className="header-container">
@@ -27,13 +27,7 @@ function Header() {
         </div>
       </div>
 
-      {/* Bouton hamburger */}
-      <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-        ☰
-      </button>
-
-      {/* Navigation principale */}
-      <nav className={`nav-links ${menuOpen ? "show" : ""}`}>
+      <nav className="nav-links">
         <Link to="/" className="nav-link">{translations.home}</Link>
         <Link to="/experiences" className="nav-link">{translations.experience}</Link>
         <Link to="/projets" className="nav-link">{translations.projects}</Link>

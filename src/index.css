@@ -85,7 +85,7 @@ main {
   width: 90px; /* Taille de la photo */
   height: 90px; /* Assurez-vous que la hauteur est proportionnelle */
   object-fit: cover; /* Assure que l'image couvre bien l'espace */
-  margin-bottom: .2rem;
+  margin-bottom: 0.2rem;
 }
 
 .flag-container {
@@ -163,30 +163,6 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
-  }
-}
-
-/* Hamburger caché par défaut */
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  color: white;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* Menu navigation caché en mobile */
-.nav-links {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
   }
 }
 
