@@ -43,12 +43,19 @@ main {
   left: 0;
   width: 100%;
   background-color: #242424; /* Même couleur que le fond */
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 15px 30px; /* Ajout de padding horizontal et vertical */
   z-index: 100; /* Inférieur au footer mais supérieur au reste du contenu */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour le distinguer */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+/* Flex haut du header */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .header-left {
@@ -57,12 +64,18 @@ main {
   gap: 1rem;
 }
 
+.header-name {
+  font-size: 2.5em; /* Taille du texte du nom */
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+}
+
 .header-center {
   flex: 1;
   display: flex;
   justify-content: center;
 }
-
 
 .header-photo {
   border-width: 4px;
@@ -72,14 +85,14 @@ main {
   width: 90px; /* Taille de la photo */
   height: 90px; /* Assurez-vous que la hauteur est proportionnelle */
   object-fit: cover; /* Assure que l'image couvre bien l'espace */
-  margin-bottom: 1rem;
+  margin-bottom: .2rem;
 }
 
 .flag-container {
   display: flex;
   gap: 0.5rem;
   margin-right: 3px;
-  padding: 15px 15px;
+  padding: 5px 5px;
 }
 
 .flag-button {
@@ -88,6 +101,7 @@ main {
   cursor: pointer;
   display: flex;
   gap: 0.5rem;
+  padding-right: 5px;
 }
 
 .flag-icon {
@@ -97,15 +111,10 @@ main {
   border-radius: 20%; /* Même bordure arrondie que la photo */
 }
 
-.header-name {
-  font-size: 2.5em; /* Taille du texte du nom */
-  color: white;
-}
-
 body {
   margin: 0;
   margin-right: auto;
-  padding-top: 4rem;
+  padding-top: 6rem;
   padding-left: 2rem;
   min-height: 100vh;
   overflow-x: hidden;
@@ -159,13 +168,14 @@ button:focus-visible {
 
 .nav-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
-  justify-content: center;
-  flex-grow: 1;
+  margin-top: 1rem;
+  /* justify-content: flex-start; */
 }
 
 .nav-link {
-  padding: 10px 20px; /* Ajustez le padding selon vos besoins */
+  padding: 10px 15px; /* Ajustez le padding selon vos besoins */
   text-decoration: none;
   color: #64b1ff;
   font-weight: 500;
