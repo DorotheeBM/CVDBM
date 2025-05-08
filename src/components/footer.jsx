@@ -13,7 +13,7 @@ const Footer = () => {
           <img src="/assets/enveloppe2.png" alt={translations.contact_alt} className="footer-icon" />
         </Link>
         <a href="https://github.com/DorotheeBM" target="_blank" rel="noopener noreferrer" title={translations.github_title}>
-          <img src="/src/assets/LogoGH1.png" alt={translations.github_alt} className="footer-icon" />
+          <img src="/assets/assets/LogoGH1.png" alt={translations.github_alt} className="footer-icon" />
         </a>
         <a href="https://www.linkedin.com/in/dorothee-braud/" target="_blank" rel="noopener noreferrer" title={translations.linkedin_title}>
           <img src="/assets/LogoLI1.png" alt={translations.linkedin_alt} className="footer-icon" />
