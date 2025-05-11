@@ -11,45 +11,38 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ===== LAYOUT ===== */
+body {
+  margin: 0;
+  margin-right: auto;
+  padding-top: 6rem;
+  padding-left: 2rem;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
 main {
   padding-top: 100px; /* Hauteur approximative du header */
   padding-bottom: 100px; /* Hauteur approximative du footer */
   overflow-y: auto;
 }
 
-.icon-container {
-  position: fixed;
-  bottom: 0; /* Fixé tout en bas */
-  left: 0; /* Commence à gauche */
-  width: 100%; /* Prend toute la largeur */
-  background-color: #242424; /* Même couleur que le fond, remplace la transparence */
-  padding: 15px 0; /* Espace au-dessus et en-dessous des icônes */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem; /* Espacement entre les icônes */
-  z-index: 100; /* S'assure que le footer reste au-dessus des autres éléments */
-}
-
-.footer-icon {
-  border-radius: 50px;
-  width: 50px; /* Taille des icônes dans le footer */
-  padding-top: 2em;
-}
-
+/* ===== HEADER ===== */
 .header-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #242424; /* Même couleur que le fond */
-  padding: 15px 30px; /* Ajout de padding horizontal et vertical */
-  z-index: 100; /* Inférieur au footer mais supérieur au reste du contenu */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour le distinguer */
+  background-color: #242424;
+  padding: 15px 30px;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  box-sizing: border-box;
 }
+
 /* Flex haut du header */
 .header-top {
   display: flex;
@@ -65,66 +58,100 @@ main {
 }
 
 .header-name {
-  font-size: 2.5em; /* Taille du texte du nom */
+  font-size: 2.5em;
   font-weight: bold;
   color: white;
   white-space: nowrap;
-}
-
-.header-center {
-  flex: 1;
-  display: flex;
-  justify-content: center;
 }
 
 .header-photo {
   border-width: 4px;
   border-style: solid;
   border-color: #64b1ff;
-  border-radius: 20%; /* Photo ronde */
-  width: 90px; /* Taille de la photo */
-  height: 90px; /* Assurez-vous que la hauteur est proportionnelle */
-  object-fit: cover; /* Assure que l'image couvre bien l'espace */
+  border-radius: 20%;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
   margin-bottom: 0.2rem;
 }
 
-.flag-container {
-  display: flex;
-  gap: 0.5rem;
-  margin-right: 3px;
-  padding: 5px 5px;
-}
-
-.flag-button {
+/* Bouton Burger */
+.burger {
+  display: none;
   background: none;
   border: none;
+  color: #64b1ff;
+  font-size: 2rem;
   cursor: pointer;
+  padding: 0.2em 0.5em;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.nav-link {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #64b1ff;
+  font-weight: 500;
+  border: 2px solid #64b1ff;
+  border-radius: 8px;
+  transition: border-color 0.25s, background-color 0.25s;
+}
+
+.nav-link:hover {
+  color: #64c4ff;
+  border-color: #ffffff;
+  background-color: #25425e;
+}
+
+/* Language buttons */
+.language-buttons {
   display: flex;
   gap: 0.5rem;
-  padding-right: 5px;
+  align-items: center;
 }
 
 .flag-icon {
-  width: 40px; /* Même largeur que la photo */
-  height: 40px; /* Même hauteur que la photo */
-  object-fit: cover; /* Assure que l'image couvre bien l'espace */
-  border-radius: 20%; /* Même bordure arrondie que la photo */
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 20%;
 }
 
-body {
-  margin: 0;
-  margin-right: auto;
-  padding-top: 6rem;
-  padding-left: 2rem;
-  min-height: 100vh;
-  overflow-x: hidden;
+/* ===== FOOTER ===== */
+.icon-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #242424;
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  z-index: 100;
 }
 
+.footer-icon {
+  border-radius: 50px;
+  width: 50px;
+  padding-top: 2em;
+}
+
+/* ===== GENERAL STYLES ===== */
 a {
   font-weight: 500;
   color: #64b1ff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #64b1ff;
 }
@@ -145,99 +172,91 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #64b1ff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #64b1ff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
-  /* justify-content: flex-start; */
-}
-
-.nav-link {
-  padding: 10px 15px; /* Ajustez le padding selon vos besoins */
-  text-decoration: none;
-  color: #64b1ff;
-  font-weight: 500;
-  border: 2px solid #64b1ff; /* Ajoute une bordure */
-  border-radius: 8px; /* Coins arrondis */
-  transition: border-color 0.25s, background-color 0.25s;
-}
-
-.nav-link:hover {
-  color: #64c4ff;
-  border-color: #ffffff; /* Change la couleur de la bordure au survol */
-  background-color: #25425e; /* Change la couleur de fond au survol */
-}
-
-.language-buttons {
-  display: flex;
-  gap: 0.5rem; /* Espacement entre les boutons de langue */
-  align-items: center;
-  padding-right: 2rem;
-}
-
+/* ===== BIO ===== */
 .bio {
   padding: 50px;
   text-align: justify;
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-  }
-
-  .header-name {
-    font-size: 1.9em;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .nav-link {
-    width: 100%;
-    text-align: center;
-  }
+/* ===== STUDIES ===== */
+.studies {
+  font-size: 1em;
+  line-height: 1.2;
 }
 
-@media (max-width: 480px) {
-  .header-photo {
-    width: 40px;
-    height: 40px;
-    margin-bottom: none;
-  }
-
-  .header-name {
-    font-size: 1em;
-  }
-
-  .bio {
-    padding: 10px;
-  }
+.studies h3 {
+  color: #64b1ff;
 }
+
+.studies ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.studies li {
+  margin-bottom: 0.5em;
+}
+
+.studies a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.studies a:hover {
+  text-decoration: underline;
+}
+
+/* ===== SKILLS ===== */
+.douce h3 {
+  color: #64b1ff;
+}
+
+.tech h3 {
+  color: #64b1ff;
+}
+
+.competencesTechniques-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.competencesTechniques-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.competencesTechniques-subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 16px;
+}
+
+.competencesTechniques-list {
+  list-style-type: disc;
+  padding-left: 24px;
+  color: #4a4a4a;
+}
+
+/* ===== CONTACT ===== */
 .contact-container {
   border-radius: 12px;
   padding: 2rem;
@@ -278,79 +297,107 @@ button:focus-visible {
   background-color: #25425e;
 }
 
-/* Responsive */
+/* ===== LIGHT MODE ===== */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #64b1ff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+  
+  .header-container {
+    background-color: #ffffff;
+  }
+  
+  .icon-container {
+    background-color: #ffffff;
+  }
+}
+
+/* ===== RESPONSIVE STYLES ===== */
 @media (max-width: 768px) {
-  .contact-container {
-    padding: 2rem;
+  body {
+    padding-top: 5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .burger {
+    display: block;
   }
 
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    margin: 0.2rem 0;
+  }
+
+  .header-name {
+    font-size: 1.8em;
+  }
+  
+  .bio {
+    padding: 20px;
+  }
+  
   .contact-button {
-    font-size: 0.9rem;
+    width: 30%;
   }
 }
 
-.studies {
-  font-size: 1em; /* Taille de la police */
-  line-height: 1.2; /* Interligne */
-}
+@media (max-width: 480px) {
+  body {
+    padding-top: 4.5rem;
+  }
+  
+  .header-container {
+    padding: 10px 15px;
+  }
 
-.studies h3 {
-  color: #64b1ff;
-}
+  .header-photo {
+    width: 50px;
+    height: 50px;
+    border-width: 2px;
+  }
 
-.studies ul {
-  list-style-type: disc; /* Style de la liste */
-  padding-left: 20px; /* Espacement à gauche */
-}
+  .header-name {
+    font-size: 1.2em;
+  }
 
-.studies li {
-  margin-bottom: 0.5em; /* Espacement entre les éléments de la liste */
-}
-
-.studies a {
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.studies a:hover {
-  text-decoration: underline; /* Souligner les liens au survol */
-}
-
-.douce h3 {
-  color: #64b1ff;
-}
-
-.tech h3 {
-  color: #64b1ff;
-}
-
-.competencesTechniques-container {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 768px;
-  margin: 0 auto;
-  padding: 32px;
-}
-
-.competencesTechniques-title {
-  font-size: 24px;
-  font-weight: bold;
-  color: #007bff; /* Bleu */
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.competencesTechniques-subtitle {
-  font-size: 20px;
-  font-weight: bold;
-  color: #007bff; /* Bleu */
-  margin-bottom: 16px;
-}
-
-.competencesTechniques-list {
-  list-style-type: disc;
-  padding-left: 24px;
-  color: #4a4a4a; /* Gris foncé */
+  .flag-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .bio {
+    padding: 10px;
+  }
+  
+  .icon-container {
+    gap: 1rem;
+  }
+  
+  .footer-icon {
+    width: 40px;
+  }
+  
+  .contact-button {
+    width: 50%;
+  }
 }
